@@ -94,7 +94,7 @@
 									   TextWrapping="Wrap" />
 							<TextBlock x:Name="hpContentAuthor"
 									   Grid.Row="1"
-									   Margin="0,0,10,0"
+									   Margin="0,0,35,0"
 									   HorizontalAlignment="Right"
 									   FontSize="12"
 									   Text="{x:Bind hp_content_author}"

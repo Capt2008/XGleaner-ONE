@@ -51,6 +51,9 @@ namespace XGleaner_ONE.ViewModel.WebService
 					string onlyContentStr = datum.hp_content;
 					onlyContentStr = onlyContentStr.Substring( 0, onlyContentStr.IndexOf( "b" ) + 1 );
 					onlyContentStr = onlyContentStr.Replace( "b", "" );
+					onlyContentStr = onlyContentStr.Replace( "。", "。"+ Environment.NewLine );
+					onlyContentStr = onlyContentStr.Replace( "？", "？" + Environment.NewLine );
+					onlyContentStr = onlyContentStr.Replace( "......", "......" + Environment.NewLine );
 					datum.hp_content_noauthor = onlyContentStr;
 
 					string onlyAuthorStr = datum.hp_content;
@@ -62,6 +65,9 @@ namespace XGleaner_ONE.ViewModel.WebService
 					string onlyContentStr = datum.hp_content;
 					onlyContentStr = onlyContentStr.Substring( 0, onlyContentStr.IndexOf( "f" ) + 1 );
 					onlyContentStr = onlyContentStr.Replace( "f", "" );
+					onlyContentStr = onlyContentStr.Replace( "。", "。" + Environment.NewLine );
+					onlyContentStr = onlyContentStr.Replace( "？", "？" + Environment.NewLine );
+					onlyContentStr = onlyContentStr.Replace( "……", "……" + Environment.NewLine );
 					datum.hp_content_noauthor = onlyContentStr;
 
 					string onlyAuthorStr = datum.hp_content;
