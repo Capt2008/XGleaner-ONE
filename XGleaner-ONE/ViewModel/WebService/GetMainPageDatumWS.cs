@@ -18,17 +18,16 @@ namespace XGleaner_ONE.ViewModel.WebService
 
 			var httpClient = new HttpClient();
 
-			var response = await httpClient.GetAsync( url );
+            var ms = await httpClient.GetStreamAsync(url);
+			//var response = await httpClient.GetAsync( url );
 
-			var result = await response.Content.ReadAsStringAsync();
+			//var result = await response.Content.ReadAsStringAsync();
 
-			var ms = new MemoryStream( Encoding.UTF8.GetBytes( result ) );
+			//var ms = new MemoryStream( Encoding.UTF8.GetBytes( result ) );
 
 			var serializer = new DataContractJsonSerializer( typeof( MainPageDatum ) );
 
-			var serializerResult = ( MainPageDatum ) serializer.ReadObject( ms );
-
-			return serializerResult;
+            return ( MainPageDatum ) serializer.ReadObject( ms );
 		}
 
 		public async static Task FormatMainPageDatumAsync(ObservableCollection<Datum> fMPDC)
